@@ -1,0 +1,22 @@
+[debug] [2023-08-17T02:18:59.304Z] ----------------------------------------------------------------------
+[debug] [2023-08-17T02:18:59.306Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\JOE\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js open
+[debug] [2023-08-17T02:18:59.307Z] CLI Version:   12.4.8
+[debug] [2023-08-17T02:18:59.307Z] Platform:      win32
+[debug] [2023-08-17T02:18:59.307Z] Node Version:  v18.12.1
+[debug] [2023-08-17T02:18:59.308Z] Time:          Thu Aug 17 2023 04:18:59 GMT+0200 (Eastern European Standard Time)
+[debug] [2023-08-17T02:18:59.308Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-08-17T02:18:59.387Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-08-17T02:18:59.387Z] > authorizing via signed-in user (joetiger22222@gmail.com)
+[debug] [2023-08-17T02:18:59.388Z] [iam] checking project physio-time-1c021 for permissions ["firebase.projects.get"]
+[debug] [2023-08-17T02:18:59.391Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/physio-time-1c021:testIamPermissions [none]
+[debug] [2023-08-17T02:18:59.391Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/physio-time-1c021:testIamPermissions x-goog-quota-user=projects/physio-time-1c021
+[debug] [2023-08-17T02:18:59.391Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/physio-time-1c021:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-08-17T02:19:00.232Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/physio-time-1c021:testIamPermissions 200
+[debug] [2023-08-17T02:19:00.232Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/physio-time-1c021:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-08-17T02:19:00.233Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/physio-time-1c021 [none]
+[debug] [2023-08-17T02:19:00.591Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/physio-time-1c021 200
+[debug] [2023-08-17T02:19:00.592Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/physio-time-1c021 {"projectId":"physio-time-1c021","projectNumber":"1037434699251","displayName":"physio-time","name":"projects/physio-time-1c021","resources":{"hostingSite":"physio-time-1c021","realtimeDatabaseInstance":"physio-time-1c021-default-rtdb"},"state":"ACTIVE","etag":"1_3d6ef22c-993b-444e-972e-ec600bec026c"}
+[debug] [2023-08-17T02:19:00.592Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/physio-time-1c021 [none]
+[debug] [2023-08-17T02:19:00.971Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/physio-time-1c021 200
+[debug] [2023-08-17T02:19:00.971Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/physio-time-1c021 {"projectId":"physio-time-1c021","projectNumber":"1037434699251","displayName":"physio-time","name":"projects/physio-time-1c021","resources":{"hostingSite":"physio-time-1c021","realtimeDatabaseInstance":"physio-time-1c021-default-rtdb"},"state":"ACTIVE","etag":"1_3d6ef22c-993b-444e-972e-ec600bec026c"}

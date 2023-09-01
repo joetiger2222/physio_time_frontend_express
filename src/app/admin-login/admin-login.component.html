@@ -1,0 +1,23 @@
+<div class="adminLoginContainer">
+    
+    <div class="loginDiv">
+        <h1>Login</h1>
+    
+
+    <div  class="inputsAndPhotoLogin">
+
+        <form  class="loginInputs" (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <input type="email" placeholder="Email..." email ngModel name="email" required>
+            <p id="emailMessage" style="display: none;color: red;margin: 0;">Please Enter A Valid Email</p>
+            <input type="password" placeholder="Password" ngModel name="password" required/>
+            <p id="passwordMessage" style="display: none;color: red;margin: 0;">Please Enter A Valid Password</p>
+            <p id="wrongEmailOrPasswordMessaage" style="display: none;color: red;margin: 0;">Wrong Email Or Password</p>
+            <button type="submit">Login</button>
+        </form>
+
+    </div>
+</div>
+<div *ngIf="isLoading" class="modal-overlay">
+    <img src="../../assets/loader2.gif" />
+</div>
+</div>

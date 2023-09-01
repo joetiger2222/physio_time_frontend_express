@@ -1,0 +1,108 @@
+.adminLoginContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #dfdede;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+.loginDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    color: rgb(63, 114, 18);;
+    max-width: 400px;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid rgb(76, 138, 21);
+    padding: 20px;
+    background-image: url(../../assets/login.png);
+    background-position:  center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.loadingDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    color: rgb(63, 114, 18);;
+    max-width: 400px;
+    /* background-color: white; */
+    border-radius: 10px;
+    /* border: 2px solid rgb(76, 138, 21); */
+    padding: 20px;
+}
+
+.inputsAndPhotoLogin{
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.loginInputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    row-gap: 20px;
+}
+
+.loginInputs>input{
+    width: 80%;
+    max-width: 300px;
+    height: 40px;
+    padding-left: 10px;
+    color: rgb(76, 138, 21);
+    border-radius: 5px;
+    border: 2px solid rgb(49, 90, 13); 
+    outline: none;
+    font-size: 18px;
+    transition: all ease 0.5s;
+}
+
+.loginInputs>input:focus{
+    scale: (1,1);
+    font-size: 22px;
+}
+
+
+.loginInputs>button{
+    width: 80%;
+    max-width: 150px;
+    height: 40px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(76, 138, 21);
+    transition: all ease 0.5s;
+}
+
+.loginInputs>button:hover{
+    background-color: rgb(63, 114, 18);
+    cursor: pointer;
+    height: 50px;
+    max-width: 170px;
+}
+input.ng-invalid.ng-touched {
+    border: 1px solid red !important;
+  }
+
+  .modal-overlay {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }

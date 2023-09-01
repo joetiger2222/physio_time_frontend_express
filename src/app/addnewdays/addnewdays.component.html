@@ -1,0 +1,35 @@
+<div class="calendarContainer">
+    <!-- <h1>Choose Reservation Date</h1> -->
+  <div class="calendarAndTimesContainer">
+    <div class="calendar">
+      <full-calendar
+        style="width: 100% "
+        [options]="calendarOptions"
+      ></full-calendar>
+    </div>
+    <div class="timesContainer">
+        <h3 *ngIf="choosenDate===''">Choose Date To Add New Appointments</h3>
+        <div class="startEndAll" *ngIf="choosenDate!==''">
+            <h3>Date : {{choosenDate}}</h3>
+            <div class="startEndContainer">
+                <div class="startEndDiv">
+                    <label>Start (24 HR Format)</label>
+                    <input type="number" [(ngModel)]="startTime">
+                </div>
+                <div class="startEndDiv">
+                    <label>End (24 HR Format)</label>
+                    <input type="number" [(ngModel)]="endTime">
+                </div>
+            </div>
+            <div class="addButtonsDiv">
+                <button (click)="addForDay()">Add For The Day</button>
+                <button (click)="addForTheMonth()">Add For The Month</button>
+                <h4 id="warningMessage">You Already Have Appointments In This Date If You Wish To Edit Please Go To Edit Appointments</h4>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="modal-overlay" id="EditDay" *ngIf="isLoading">
+  <img src="../../assets/loader2.gif" />
+</div>

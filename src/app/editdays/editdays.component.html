@@ -1,0 +1,64 @@
+<div class="editDaysContainer">
+    <h1>Choose Day To Edit</h1>
+    <h3>Days With Reserved Appointemnts Will Not Show Up here</h3>
+    <div class="daysToEditContainer" *ngIf="!isLoading">
+        <div class="singleDoctorDayContainer" *ngFor="let day of allDoctorDays">
+            <h3>Date : {{day.date | date}}</h3>
+            <h3>Start : {{convertTime(day.start)}}</h3>
+            <h3>End : {{convertTime(day.end)}}</h3>
+            <div class="editDeleteButtonsContainer">
+                <button style="background-color: rgb(176, 15, 15);" (click)="openDeleteDayModal(day._id)">Delete</button>
+                <!-- <button style="background-color:  rgb(82, 147, 25);" (click)="openEditModal(day._id)">Edit</button> -->
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+
+<div class="modal-overlay" id="DeleteDay">
+    <div class="cancelApptContainer">
+      <img src="../../assets/warning.png" />
+      <h3>You Are About To Delete This Day</h3>
+      <div class="cancelButtonsContainer">
+        <button style="background-color: rgb(82, 147, 25)" (click)="CloseDeleteDayModal()" class="cancelModal">Close</button>
+        <button
+          (click)="DeleteDay()"
+          
+          class="cancelModal"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="EditDay">
+    <div class="cancelApptContainer">
+        <div class="startEndContainer">
+            <div class="startEndDiv">
+                <label>Start (24 HR Format)</label>
+                <input type="number" [(ngModel)]="startTime">
+            </div>
+            <div class="startEndDiv">
+                <label>End (24 HR Format)</label>
+                <input type="number" [(ngModel)]="endTime">
+            </div>
+        </div>
+      <div class="cancelButtonsContainer">
+        <button  (click)="CloseEditModal()" class="cancelModal">Close</button>
+        <button
+          (click)="editDay()"
+          style="background-color: rgb(82, 147, 25)"
+          class="cancelModal"
+        >
+          Submit
+        </button>
+      </div>
+      <h4 id="warningMessage"></h4>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="EditDay" *ngIf="isLoading" style="display: flex;">
+    <img src="../../assets/loader2.gif" />
+  </div>

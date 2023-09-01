@@ -1,0 +1,116 @@
+<div class="calendarContainer">
+  <h1>Choose Reservation Date</h1>
+  <div class="calendarAndTimesContainer">
+    <div class="calendar">
+      <full-calendar
+        style="width: 100% "
+        [options]="calendarOptions"
+      ></full-calendar>
+    </div>
+    <div *ngIf="!timesLoading" class="timesContainer">
+      <!-- <h1 *ngIf="mySingleDayData?.length>0">Choose Time In {{ date }}</h1> -->
+      <h3 *ngIf="date===''">Select Date To View Available Times</h3>
+      <h3 *ngIf="date!=='' && mySingleDayData?.length===0">No Available Times In {{this.date}}</h3>
+      <div class="times" *ngIf="mySingleDayData?.length!==0">
+        <ng-container *ngFor="let singleAppointment of mySingleDayData">
+        <h1 class="time" *ngIf="isTimeAvailble(singleAppointment.time)" (click)="openModal(singleAppointment.time)">
+          {{convertTimeToNumber(singleAppointment.time)}}
+        </h1>
+      </ng-container>
+      </div>
+    </div>
+    <div *ngIf="timesLoading" class="timesContainer">
+      <img src="../../assets/loader2.gif" />
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="myModal">
+    <form class="ReserveModal" (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <h1>Reservation</h1>
+      <div class="ReserveModalInputContainer">
+        <label for="name">Name:</label>
+        <input type="text" placeholder="Name" ngModel name="name" required />
+      </div>
+      <div class="ReserveModalInputContainer">
+        <label for="name">Phone Number:</label>
+        <input
+          type="text"
+          placeholder="Phone Number"
+          ngModel
+          name="phoneNumber"
+          required
+        />
+      </div>
+      <div class="ReserveModalInputContainer">
+        <label for="name">Email Address:</label>
+        <input
+          type="email"
+          placeholder="Email Address"
+          ngModel
+          name="email"
+          required
+          email
+          #email="ngModel"
+        />
+      </div>
+      <div class="cancelSubmitModalContainer">
+        <button class="cancelModalCancelButton" (click)="closeModal()" type="button">Cancel</button>
+        <button
+          class="cancelModal"
+          type="submit"
+          style="background-color: rgb(82, 147, 25)"
+          [disabled]="!f.valid"
+          
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+
+
+  <div class="modal-overlay" id="succededModal">
+    <div class="succededModal" >
+      <img src="../../assets/checked.png" />
+      <h1>Reservation Succeded!</h1>
+      <h4>If You Which To Cancel Your Reservation Please Contact:</h4>
+      <a
+        target="_blank"
+        href="https://api.whatsapp.com/send?phone=201028242712"
+        style="
+          font-size: 20px;
+          font-weight: bold;
+          text-decoration: none;
+          color: blue;
+        "
+        >DR. Ragab Mohamed</a
+      >
+      <h4>OR</h4>
+      <a
+        target="_blank"
+        href="https://api.whatsapp.com/send?phone=201222209731"
+        style="
+          font-size: 20px;
+          font-weight: bold;
+          text-decoration: none;
+          color: blue;
+        "
+        >DR. Marwan Omara</a
+      >
+      <button (click)="closeSuccedessModal()" class="cancelModal" style="border-radius: 10px;">Close</button>
+      </div>
+      
+        
+      
+    
+  </div>
+
+  <div class="modal-overlay" style="display: flex;" *ngIf="isReserveingLoading">
+    
+      <img src="../../assets/loader2.gif" />
+   
+  </div>
+
+
+
+</div>

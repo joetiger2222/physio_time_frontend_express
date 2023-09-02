@@ -118,8 +118,8 @@ export class ReserveAppointmentComponent {
     };
     console.log(body)
     this.http
-      .patch(
-        `https://physio-time.onrender.com/reserveAppointment/64eed9131727187596d9a611`,
+      .post(
+        `https://physio-time-2.onrender.com/reserveAppointment/${this.doctorId}`,
         body
       )
       .subscribe({

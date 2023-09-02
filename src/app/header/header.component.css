@@ -5,11 +5,20 @@
   z-index: 100;
   background-color: white;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-between;
   padding-top: 10px;
 }
 .headerImg {
   width: 150px;
+  margin-left: 50px;
+}
+.headerRight{
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: flex-end;
+  column-gap: 50px;
+  margin-right: 50px;
 }
 h4{
   margin: 0;
@@ -31,6 +40,26 @@ h4{
   flex-direction: column;
   row-gap: 5px;
 }
+
+.social{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  column-gap: 20px;
+  /* width: 50%; */
+  margin-top: auto;
+}
+.social>a{
+  width: 50px;
+  transition: all ease .5s;
+}
+
+.social>a:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+  
+}
 @media only screen and (max-width:700px) {
  .headerNumberContainer{
   font-size: 14px;
@@ -41,9 +70,17 @@ h4{
   width: 20px !important;
  }
   .headerImg {
-    width: 100px;
+    width: 70px;
+    margin-left: 20px !important;
   }
   .headerNumbers>a{
-    font-size: 14px !important;
+    font-size: 12px !important;
+  }
+  .social>a>img{
+    width: 30px !important;
+  }
+  .headerRight{
+    margin-right: 10px;
+    column-gap: 20px;
   }
   }
